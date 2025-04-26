@@ -1,85 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="1stle.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kunjunny Andiless</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .slider-container {
+      scroll-snap-type: x mandatory;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      perspective: 10cm;
+    }
+    .slider-item {
+      scroll-snap-align: center;
+      flex: none;
+      width: 7cm;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      transform-style: preserve-3d;
+    }
+    .slider-item:hover {
+      transform: rotateY(10deg) scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+    .slide-up {
+      transform: translateY(20px);
+      opacity: 0;
+      animation: slideUp 1s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes slideUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
-
-<body>
-  <header>
-    <h1>Alphonsa Jacob</h1>
-    <p>Web Developer | Programmer | Tech Enthusiast</p>
+<body class="bg-gray-100 text-gray-900">
+  <header class="bg-white shadow p-6 text-center fade-in">
+    <h1 class="text-4xl font-bold">Kunjunny</h1>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main class="p-6">
+    <!-- Image Slider -->
+    <div class="slider-container flex space-x-4 overflow-x-auto pb-4 fade-in">
+      <div class="slider-item"><img src="image1.jpg" alt="Image 1" class="rounded-xl w-full h-64 object-cover"></div>
+      <div class="slider-item"><img src="img2.jpg" alt="Image 2" class="rounded-xl w-full h-64 object-cover"></div>
+      <div class="slider-item"><img src="img3.jpg" alt="Image 3" class="rounded-xl w-full h-64 object-cover"></div>
+      <div class="slider-item"><img src="img4.jpg" alt="Image 4" class="rounded-xl w-full h-64 object-cover"></div>
+      <div class="slider-item"><img src="img5.jpg" alt="Image 5" class="rounded-xl w-full h-64 object-cover"></div>
+      <div class="slider-item"><img src="img6.jpg" alt="Image 6" class="rounded-xl w-full h-64 object-cover"></div>
+      <div class="slider-item"><img src="img7.jpg" alt="Image 7" class="rounded-xl w-full h-64 object-cover"></div>
+      <div class="slider-item"><img src="img8.jpg" alt="Image 8" class="rounded-xl w-full h-64 object-cover"></div>
+      <div class="slider-item"><img src="img9.jpg" alt="Image 9" class="rounded-xl w-full h-64 object-cover"></div>
+      <div class="slider-item"><img src="img10.jpg" alt="Image 10" class="rounded-xl w-full h-64 object-cover"></div>
+    </div>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <img src="" alt="Profile" class="profile-img">
-    <p>Hello! I'm a passionate web developer with a love for creating clean and responsive web applications. I enjoy learning new technologies and improving my skills every day.</p>
-  </section>
+    <!-- Self Intro Section -->
+    <section class="mt-10 bg-white p-6 rounded-xl shadow slide-up">
+      <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+      <p class="text-lg leading-relaxed">
+        Hello! I'm Kunjunny. This is a short introduction about myself. <br>You can use this space to talk about your passions, background, skills, or anything you'd like to share with visitors.
+      </p>
+    </section>
+  </main>
 
-  <section id="skills">
-    <h2>Skills and Expertise</h2>
-    <ul>
-      <li>HTML, CSS, JavaScript</li>
-   
-      <li>Git, GitHub</li>
-    
-    </ul>
-  </section>
-
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <p>Here are some of the projects I've worked on:</p>
-    <ul>
-      <li><strong>Portfolio Website</strong> - A personal portfolio to showcase my work. <a href="#">View Project</a></li>
-      <img  src="Screenshot_19-4-2025_193731_.jpeg" alt="Project Screenshot" class="project-img"> 
-      </ul><ul>   
-      <li><strong>Task Manager App</strong> - A simple to-do list app using JavaScript. <a href="#">View Project</a></li>
-    </ul>
-    <img  src="Screenshot (122).png" alt="Project Screenshot" class="project-img">
-    
-  </section>
-  <section id="certificates">
-    <h2>Certificates</h2>
-    <p>Here are some of my certifications:</p>
-    <ul>
-      <li>
-        <strong>Nasscom Digital101</strong> - Completed in 2024
-        <a href="DOC-20240921-WA0025..pdf" target="_blank">View Certificate</a>
-      </li>
-      <li>
-        <strong>Infosys cert.</strong> - Completed in 2025
-        <a href="1-58f47815-d519-4acf-9e65-209821d00f37.pdf" target="_blank">View Certificate</a>
-      </li>
-    </ul>
-  </section>
-  
-  <section id="contact">
-    <h2>Contact Information</h2>
-    <p>You can reach me via:</p>
-    <ul>
-      <li>Email:<a href="mailto:your.email@example.com">alphonsakaramayil@gmail.com</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">https://www.linkedin.com/in/alphonsa-jacob-77567b32b//</a></li>
-      <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/2alphonsjk6</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Alphonsa Jacob. All rights reserved.</p>
+  <footer class="mt-10 text-center text-sm text-gray-500 p-4 fade-in">
+    &copy; 2025 Kunjunny . All rights reserved.
   </footer>
-
-  
 </body>
-
 </html>
